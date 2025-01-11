@@ -1,7 +1,7 @@
 # Copyright 2022 Manna Harbour
 # https://github.com/manna-harbour/miryoku
 
-name: 'Build Inputs'
+name: 'Adv360 Workflow'
 on:
   workflow_dispatch:
     inputs:
@@ -102,6 +102,7 @@ jobs:
   build:
     uses: ./.github/workflows/main.yml
     secrets: inherit
+    needs: process-inputs
     with:
       board: ${{ needs.process-inputs.outputs.board }}
       shield: ${{ needs.process-inputs.outputs.shield }}
