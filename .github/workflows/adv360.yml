@@ -1,0 +1,14 @@
+# Copyright 2024 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: "Build Example Mouse Emulation"
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["adv360pro_left,adv360pro_right"]'
+      alphas: '["QWERTY"]'
+      custom_config: '["\n#define MIRYOKU_EXTRA_COLEMAKDH"]'
+      kconfig: '["CONFIG_ZMK_POINTING=y"]'
