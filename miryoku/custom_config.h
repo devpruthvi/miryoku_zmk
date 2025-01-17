@@ -4,6 +4,7 @@
 // This fixes adv360pro miryoku mapping, TODO: submit a patch to upstream to fix?
 
 #define XXX &none
+#define U_TAPPING_TERM 280
 
 // Use unused adv360 keys
 // swap some thumb cluster keys
@@ -22,8 +23,17 @@ XXX          &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                     K32  K
 // override MIRYOKU_ALTERNATIVES_BASE_QWERTY qwerty base to have semicolon instead of quote
 #define CUSTOM_ALTERNATIVES_BASE_QWERTY \
 &kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &kp Y,             &kp U,             &kp I,             &kp O,             &kp P,             \
-U_MT(LGUI, A),     U_MT(LALT, S),     U_MT(LCTRL, D),    U_MT(LSHFT, F),    &kp G,             &kp H,             U_MT(LSHFT, J),    U_MT(LCTRL, K),    U_MT(LALT, L),     U_MT(LGUI, SEMI),   \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
+U_MTL(LGUI, A),     U_MTL(LALT, S),     U_MTL(LCTRL, D),    U_MTL(LSHFT, F),    &kp G,             &kp H,             U_MTR(LSHFT, J),    U_MTR(LCTRL, K),    U_MTR(LALT, L),     U_MTR(LGUI, SEMI),   \
+U_LT(U_BUTTON, Z), U_MTL(RALT, X),     &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         U_MTR(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
 U_NP,              U_NP,              U_LT(U_NAV, ESC),U_LT(U_MEDIA, BSPC),U_LT(U_MOUSE, TAB),U_LT(U_FUN, DEL),  U_LT(U_NUM, RET), U_LT(U_SYM, SPACE),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_BASE CUSTOM_ALTERNATIVES_BASE_QWERTY
+
+// override MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH qwerty base to have semicolon instead of quote
+#define CUSTOM_ALTERNATIVES_BASE_COLEMAKDH \
+&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SQT,           \
+U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),     \
+U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
+U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPACE),U_LT(U_MOUSE, TAB),U_LT(U_SYM, RET),  U_LT(U_NUM, BSPC), U_LT(U_FUN, DEL),  U_NP,              U_NP
+
+#define MIRYOKU_LAYER_EXTRA CUSTOM_ALTERNATIVES_BASE_COLEMAKDH
