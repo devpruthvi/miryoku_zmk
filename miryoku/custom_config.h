@@ -37,3 +37,21 @@ U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp 
 U_NP,              U_NP,              U_LT(U_NAV, ESC),U_LT(U_MEDIA, BSPC),U_LT(U_MOUSE, TAB),U_LT(U_FUN, DEL),  U_LT(U_NUM, RET), U_LT(U_SYM, SPACE),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_EXTRA CUSTOM_ALTERNATIVES_BASE_COLEMAKDH
+
+// remove U_BOOT from nav layer as i'm frequently entering bootloader
+#define CUSTOM_MIRYOKU_ALTERNATIVES_NAV \
+U_NP,              &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &u_caps_word,      &kp LEFT,          &kp DOWN,          &kp UP,            &kp RIGHT,         \
+U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_NAV,       U_NA,              &kp INS,           &kp HOME,          &kp PG_DN,         &kp PG_UP,         &kp END,           \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP
+
+#define MIRYOKU_ALTERNATIVES_NAV CUSTOM_MIRYOKU_ALTERNATIVES_NAV
+
+// remove U_BOOT from sym layer as i'm frequently entering bootloader
+#define CUSTOM_MIRYOKU_ALTERNATIVES_SYM \
+&kp LBRC,          &kp AMPS,          &kp ASTRK,         &kp LPAR,          &kp RBRC,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_NP,              \
+&kp COLON,         &kp DLLR,          &kp PRCNT,         &kp CARET,         &kp PLUS,          U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
+&kp TILDE,         &kp EXCL,          &kp AT,            &kp HASH,          &kp PIPE,          U_NA,              &u_to_U_SYM,       &u_to_U_MOUSE,     &kp RALT,          U_NA,              \
+U_NP,              U_NP,              &kp LPAR,          &kp RPAR,          &kp UNDER,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+
+#define CUSTOM_MIRYOKU_ALTERNATIVES_SYM MIRYOKU_ALTERNATIVES_SYM 
