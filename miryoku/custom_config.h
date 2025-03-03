@@ -4,7 +4,7 @@
 // This fixes adv360pro miryoku mapping, TODO: submit a patch to upstream to fix?
 
 #define XXX &none
-#define U_TAPPING_TERM 280
+#define U_TAPPING_TERM 200
 
 // Use unused adv360 keys
 // swap some thumb cluster keys
