@@ -45,7 +45,10 @@ U_NP,              &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA
 U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_NAV,       U_NA,              &kp INS,           &kp HOME,          &kp PG_DN,         &kp PG_UP,         &kp END,           \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP
 
-#define MIRYOKU_ALTERNATIVES_NAV CUSTOM_MIRYOKU_ALTERNATIVES_NAV
+// Override the final layer macro directly - overriding MIRYOKU_ALTERNATIVES_NAV
+// here is futile because miryoku_layer_alternatives.h redefines it unconditionally
+// after this file is included. MIRYOKU_LAYER_NAV is guarded by #if !defined.
+#define MIRYOKU_LAYER_NAV CUSTOM_MIRYOKU_ALTERNATIVES_NAV
 
 // remove U_BOOT from sym layer as i'm frequently entering bootloader
 #define CUSTOM_MIRYOKU_ALTERNATIVES_SYM \
@@ -54,4 +57,4 @@ U_NP,              U_NP,              U_NA,              U_NA,              U_NA
 &kp TILDE,         &kp EXCL,          &kp AT,            &kp HASH,          &kp PIPE,          U_NA,              &u_to_U_SYM,       &u_to_U_MOUSE,     &kp RALT,          U_NA,              \
 U_NP,              U_NP,              &kp LPAR,          &kp RPAR,          &kp UNDER,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
-#define CUSTOM_MIRYOKU_ALTERNATIVES_SYM MIRYOKU_ALTERNATIVES_SYM 
+#define MIRYOKU_LAYER_SYM CUSTOM_MIRYOKU_ALTERNATIVES_SYM
